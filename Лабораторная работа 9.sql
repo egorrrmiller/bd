@@ -1,41 +1,41 @@
-CREATE TABLE Управление_Хмелевской (
+CREATE TABLE РЈРїСЂР°РІР»РµРЅРёРµ (
    ID INT PRIMARY KEY IDENTITY(1,1),
-   Вид VARCHAR(30) NOT NULL DEFAULT 'Президентская республика',
-  Дата_создания DATETIME DEFAULT GETDATE()
+   Р’РёРґ VARCHAR(30) NOT NULL DEFAULT 'РџСЂРµР·РёРґРµРЅС‚СЃРєР°СЏ СЂРµСЃРїСѓР±Р»РёРєР°',
+  Р”Р°С‚Р°_СЃРѕР·РґР°РЅРёСЏ DATETIME DEFAULT GETDATE()
 );
 
-CREATE TABLE Страны1_Хмелевской (
-   Код_страны INT PRIMARY KEY CHECK (Код_страны BETWEEN 1 AND 999),
-   Название VARCHAR(50) NOT NULL,
-   Континент VARCHAR(20) NOT NULL,
-   Население BIGINT CHECK (Население > 0),
-   Дата_вступления_в_ООН DATE NULL
+CREATE TABLE РЎС‚СЂР°РЅС‹1 (
+   РљРѕРґ_СЃС‚СЂР°РЅС‹ INT PRIMARY KEY CHECK (РљРѕРґ_СЃС‚СЂР°РЅС‹ BETWEEN 1 AND 999),
+   РќР°Р·РІР°РЅРёРµ VARCHAR(50) NOT NULL,
+   РљРѕРЅС‚РёРЅРµРЅС‚ VARCHAR(20) NOT NULL,
+   РќР°СЃРµР»РµРЅРёРµ BIGINT CHECK (РќР°СЃРµР»РµРЅРёРµ > 0),
+   Р”Р°С‚Р°_РІСЃС‚СѓРїР»РµРЅРёСЏ_РІ_РћРћРќ DATE NULL
 );
 
 
-CREATE TABLE Животные_Хмелевской (
+CREATE TABLE Р–РёРІРѕС‚РЅС‹Рµ (
    ID INT PRIMARY KEY IDENTITY(10,5),
-   Вид VARCHAR(50) NOT NULL,
-   Отряд VARCHAR(30) DEFAULT 'Хищные',
-   Семейство VARCHAR(30),
-   Ареал_обитания VARCHAR(100),
+   Р’РёРґ VARCHAR(50) NOT NULL,
+   РћС‚СЂСЏРґ VARCHAR(30) DEFAULT 'РҐРёС‰РЅС‹Рµ',
+   РЎРµРјРµР№СЃС‚РІРѕ VARCHAR(30),
+   РђСЂРµР°Р»_РѕР±РёС‚Р°РЅРёСЏ VARCHAR(100),
    CONSTRAINT UQ_Animal_ID UNIQUE (ID)
 );
 
-INSERT INTO Управление_Хмелевской (Вид) 
-VALUES ('Конституционная монархия');
+INSERT INTO РЈРїСЂР°РІР»РµРЅРёРµ (Р’РёРґ) 
+VALUES ('РљРѕРЅСЃС‚РёС‚СѓС†РёРѕРЅРЅР°СЏ РјРѕРЅР°СЂС…РёСЏ');
 
-INSERT INTO Страны1_Хмелевской 
-VALUES (1, 'Япония', 'Азия', 125800000, '1956-12-18');
+INSERT INTO РЎС‚СЂР°РЅС‹1
+VALUES (1, 'РЇРїРѕРЅРёСЏ', 'РђР·РёСЏ', 125800000, '1956-12-18');
 
-INSERT INTO Страны1_Хмелевской
-VALUES (1000, 'Русь', 'Европа', -100, NULL);
+INSERT INTO РЎС‚СЂР°РЅС‹1
+VALUES (1000, 'Р СѓСЃСЊ', 'Р•РІСЂРѕРїР°', -100, NULL);
 
-CREATE TABLE Цветы_Хмелевской (
+CREATE TABLE Р¦РІРµС‚С‹ (
   ID INT PRIMARY KEY,
-   Название NVARCHAR(40) NOT NULL,
-   Класс NVARCHAR(30) DEFAULT N'Двудольные',
-   Семейство NVARCHAR(30) NULL,
-   Ареал NVARCHAR(100) NULL,
-   CONSTRAINT UQ_Цветы_ID UNIQUE (ID)
+   РќР°Р·РІР°РЅРёРµ NVARCHAR(40) NOT NULL,
+   РљР»Р°СЃСЃ NVARCHAR(30) DEFAULT N'Р”РІСѓРґРѕР»СЊРЅС‹Рµ',
+   РЎРµРјРµР№СЃС‚РІРѕ NVARCHAR(30) NULL,
+   РђСЂРµР°Р» NVARCHAR(100) NULL,
+   CONSTRAINT UQ_Р¦РІРµС‚С‹_ID UNIQUE (ID)
 );
